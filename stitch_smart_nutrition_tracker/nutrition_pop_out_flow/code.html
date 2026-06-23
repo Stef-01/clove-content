@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Clove - Discover Bánh Mì</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#1b1c1c",
+                        "on-primary-fixed": "#00210e",
+                        "outline-variant": "#c1c9bf",
+                        "on-surface": "#1b1c1c",
+                        "tertiary-container": "#35303a",
+                        "secondary-container": "#d9e6da",
+                        "surface-container-low": "#f5f3f3",
+                        "on-secondary-fixed": "#131e17",
+                        "on-tertiary-fixed": "#1e1a23",
+                        "primary-fixed": "#c5eccc",
+                        "on-tertiary-fixed-variant": "#4a454f",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e3e2e2",
+                        "primary": "#00230f",
+                        "on-primary": "#ffffff",
+                        "on-primary-container": "#7ea386",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e9e8e7",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#303031",
+                        "inverse-primary": "#a9d0b1",
+                        "on-secondary-container": "#5b675e",
+                        "on-error": "#ffffff",
+                        "surface": "#fbf9f9",
+                        "secondary-fixed": "#d9e6da",
+                        "on-primary-fixed-variant": "#2c4e36",
+                        "secondary-fixed-dim": "#bdcabf",
+                        "tertiary": "#1f1b24",
+                        "surface-tint": "#43664d",
+                        "outline": "#717971",
+                        "tertiary-fixed-dim": "#ccc4d0",
+                        "primary-container": "#163822",
+                        "secondary": "#556158",
+                        "tertiary-fixed": "#e8dfec",
+                        "on-tertiary-container": "#9f97a3",
+                        "primary-fixed-dim": "#a9d0b1",
+                        "surface-dim": "#dbdad9",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#e3e2e2",
+                        "on-secondary-fixed-variant": "#3e4a41",
+                        "surface-bright": "#fbf9f9",
+                        "background": "#fbf9f9",
+                        "on-surface-variant": "#414942",
+                        "surface-container": "#efeded"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "container-padding": "20px",
+                        "stack-lg": "40px",
+                        "stack-md": "24px",
+                        "gutter": "16px",
+                        "base": "8px",
+                        "safe": "env(safe-area-inset-bottom)"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-md": ["Manrope"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-md": ["Manrope"],
+                        "caption-xs": ["Manrope"],
+                        "body-sm": ["Manrope"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-lg": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "1.4", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "caption-xs": ["10px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        .bottom-sheet-up {
+            transform: translateY(0%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .bottom-sheet-down {
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md h-screen overflow-hidden antialiased">
+<!-- App Container -->
+<main class="relative h-full w-full max-w-md mx-auto bg-black text-white flex flex-col overflow-hidden shadow-2xl md:rounded-[3rem] md:h-[850px] md:my-8 md:border-[8px] md:border-surface-container-high relative">
+<!-- Background Image Canvas -->
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center opacity-80" data-alt="A close up, high fidelity, editorial style food photography shot of a Char Siu Bánh Mì sandwich cut in half, revealing layers of roasted pork, fresh cilantro, pickled carrots, and daikon radishes inside a crusty French baguette. The background is softly blurred with warm, natural lighting typical of an inviting, premium cookbook. The aesthetic is clean, appetizing, and bright." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDLyc6X0XRtchmfzJnyn9SjVOSDzE_T3rt4YPNRsAfJT-hlIsITrylsv6u_avmIDYnd3XExglx9ydEQ2mXEPewvvb_yX9-vIZO-1m_IrqdOcpJnETvtYfIVRH3bkFL2003yJOwCqpczRGvWbdGqo2BaJf8yNL7UEvTqeyaRxHzPkxNkzyd91eI2XK7_vGRNb5L3Zqnlcqgt-zbAY5295EZwJrHCoOxOICM5rRH0X4BuKwPttaErH6PS9LR5_6OwAGM3zVcvW-UD65s')"></div>
+<!-- Gradient Overlay for readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/20"></div>
+</div>
+<!-- Top Navigation / Actions -->
+<header class="relative z-10 w-full flex justify-between items-center px-container-padding py-stack-md pt-12 md:pt-stack-md">
+<!-- Close Action -->
+<button class="w-12 h-12 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center border border-white/10 text-white hover:bg-black/60 transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+<!-- Progress Bar -->
+<div class="flex-1 mx-4 h-1.5 bg-white/20 rounded-full overflow-hidden">
+<div class="w-1/4 h-full bg-white rounded-full"></div>
+</div>
+<!-- Empty placeholder to balance layout if needed, or another action -->
+<div class="w-12 h-12"></div>
+</header>
+<!-- Main Content Area (Behind Bottom Sheet) -->
+<div class="relative z-10 flex-1 flex flex-col justify-end px-container-padding pb-32 pointer-events-none">
+<!-- Recipe Meta Info -->
+<div class="flex items-center gap-3 mb-4 pointer-events-auto">
+<span class="bg-white text-black px-4 py-2 rounded-full font-label-md">1hr 20min</span>
+<button class="bg-black/40 backdrop-blur-md text-white px-4 py-2 rounded-full font-label-md border border-white/10 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">info</span>
+                    Info
+                    <span class="material-symbols-outlined text-[16px]">expand_less</span>
+</button>
+</div>
+<!-- Title -->
+<h1 class="font-headline-xl text-white mb-2 line-clamp-2 shadow-sm pointer-events-auto">Char Siu Bánh Mì (Char Siu...</h1>
+<p class="font-body-md text-white/80 pointer-events-auto">Vietnamese <span class="mx-2">/</span> 23 ingredients</p>
+</div>
+<!-- Bottom Action Bar (Behind Bottom Sheet) -->
+<div class="absolute bottom-0 left-0 right-0 z-20 px-container-padding pb-8 pt-4 flex gap-4 items-center justify-between">
+<button class="w-14 h-14 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined">close</span>
+</button>
+<button class="w-14 h-14 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+<button class="flex-1 h-14 rounded-full bg-white text-black font-label-md flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+                Build plate
+            </button>
+</div>
+<!-- Nutritional Info Bottom Sheet (Popped Out) -->
+<div class="absolute bottom-0 left-0 right-0 z-30 bg-surface rounded-t-[2rem] shadow-[0_-8px_30px_rgba(0,0,0,0.12)] bottom-sheet-up">
+<!-- Handle -->
+<div class="w-full flex justify-center pt-4 pb-2">
+<div class="w-12 h-1.5 bg-outline-variant/50 rounded-full"></div>
+</div>
+<div class="px-container-padding pb-8 pt-2 h-[530px] overflow-y-auto">
+<!-- Disclaimers -->
+<div class="space-y-2 mb-stack-md">
+<div class="bg-surface-container-low rounded-lg p-3 text-on-surface-variant font-caption-xs border border-outline-variant/30 flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] mt-0.5">info</span>
+<p>Food-first ideas — not a replacement for your clinician's plan.</p>
+</div>
+<div class="inline-flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-full border border-outline-variant/30 font-caption-xs text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-outline"></span>
+                        Clinician review · unreviewed
+                    </div>
+</div>
+<!-- Highlights -->
+<div class="mb-stack-lg">
+<h2 class="font-headline-lg text-on-surface mb-4">Plant-forward and a complete protein.</h2>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1.5 rounded-full font-label-md">Plant-forward</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1.5 rounded-full font-label-md">Complete protein</span>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1.5 rounded-full font-label-md">Fibre-rich</span>
+</div>
+</div>
+<!-- Nutritional Breakdown -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/20 shadow-sm flex items-center justify-between">
+<!-- Circular Chart Placeholder -->
+<div class="relative w-32 h-32 flex-shrink-0">
+<!-- Simulated Donut Chart using SVG -->
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<!-- Background track -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#f5f3f3" stroke-width="12"></circle>
+<!-- Carbs (Orange) -->
+<circle class="origin-center" cx="50" cy="50" fill="transparent" r="40" stroke="#f97316" stroke-dasharray="251.2" stroke-dashoffset="150" stroke-width="12" style="transform: rotate(180deg);"></circle>
+<!-- Fat (Red) -->
+<circle class="origin-center" cx="50" cy="50" fill="transparent" r="40" stroke="#ef4444" stroke-dasharray="251.2" stroke-dashoffset="180" stroke-width="12" style="transform: rotate(270deg);"></circle>
+<!-- Protein (Blue) -->
+<circle cx="50" cy="50" fill="transparent" r="40" stroke="#3b82f6" stroke-dasharray="251.2" stroke-dashoffset="100" stroke-width="12"></circle>
+</svg>
+<!-- Center Text -->
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-lg text-on-surface leading-none">781</span>
+<span class="font-caption-xs text-on-surface-variant">kcal</span>
+</div>
+</div>
+<!-- Macro List -->
+<div class="flex-1 pl-6 space-y-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-blue-500"></span>
+<span class="font-body-sm text-blue-600">Protein (26%)</span>
+</div>
+<span class="font-label-md text-on-surface">51.2g</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-orange-500"></span>
+<span class="font-body-sm text-orange-600">Carbs (22%)</span>
+</div>
+<span class="font-label-md text-on-surface">42.7g</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-red-500"></span>
+<span class="font-body-sm text-red-600">Fat (52%)</span>
+</div>
+<span class="font-label-md text-on-surface">45.1g</span>
+</div>
+</div>
+</div>
+<!-- Spacer for scrolling past bottom button if any -->
+<div class="h-24"></div>
+</div>
+</div>
+</main>
+<script>
+        // Simple script to allow swiping down the bottom sheet for demo purposes
+        document.addEventListener('DOMContentLoaded', () => {
+            const bottomSheet = document.querySelector('.bottom-sheet-up');
+            const handle = bottomSheet.querySelector('.w-full.flex.justify-center');
+            
+            let startY = 0;
+            let currentY = 0;
+            
+            handle.addEventListener('touchstart', (e) => {
+                startY = e.touches[0].clientY;
+                bottomSheet.style.transition = 'none';
+            });
+            
+            handle.addEventListener('touchmove', (e) => {
+                currentY = e.touches[0].clientY - startY;
+                if (currentY > 0) {
+                    bottomSheet.style.transform = `translateY(${currentY}px)`;
+                }
+            });
+            
+            handle.addEventListener('touchend', (e) => {
+                bottomSheet.style.transition = 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)';
+                if (currentY > 100) {
+                    bottomSheet.classList.remove('bottom-sheet-up');
+                    bottomSheet.classList.add('bottom-sheet-down');
+                    bottomSheet.style.transform = ''; // reset inline style
+                } else {
+                    bottomSheet.style.transform = 'translateY(0%)';
+                }
+            });
+        });
+    </script>
+</body></html>

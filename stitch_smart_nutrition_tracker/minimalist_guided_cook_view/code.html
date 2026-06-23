@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guided Cook - Clove</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style data-purpose="typography">
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #1a1a1a;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+<style data-purpose="custom-utilities">
+    .text-clove-green { color: #1a4731; }
+    .bg-clove-green { background-color: #1a4731; }
+    .border-clove-green { border-color: #1a4731; }
+    
+    .text-clove-light-green { color: #2d6a4f; }
+    .bg-clove-light-green { background-color: #2d6a4f; }
+    
+    .bg-clove-surface { background-color: #ffffff; }
+    
+    /* Hide scrollbar for clean UI */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="flex justify-center items-center min-h-screen bg-gray-100 p-4">
+<!-- Mobile Device Container -->
+<div class="w-full max-w-[400px] h-[850px] bg-white rounded-[40px] shadow-2xl relative overflow-hidden border-[8px] border-gray-900 flex flex-col bg-surface-container-lowest">
+<!-- iPhone Notch Placeholder -->
+<div class="absolute top-0 inset-x-0 h-6 flex justify-center z-50">
+<div class="w-32 h-6 bg-gray-900 rounded-b-2xl"></div>
+</div>
+<!-- BEGIN: Header Section -->
+<header class="px-4 pt-12 pb-4 flex items-center justify-between border-b border-gray-100 bg-white sticky top-0 z-40">
+<!-- Back Button -->
+<button class="p-2 -ml-2 text-gray-600 hover:text-gray-900 focus:outline-none">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/polygonts">
+<path d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<!-- Progress Indicator -->
+<div class="flex flex-col items-center">
+<div class="flex gap-1 mb-1">
+<div class="w-2 h-2 rounded-full bg-clove-green"></div>
+<div class="w-2 h-2 rounded-full bg-clove-green"></div>
+<div class="w-6 h-2 rounded-full bg-clove-green"></div>
+<div class="w-2 h-2 rounded-full bg-gray-200"></div>
+</div>
+<span class="text-xs font-medium text-gray-500">Dish 1 of 4</span>
+</div>
+<!-- Empty space for symmetry -->
+<div class="w-8"></div>
+</header>
+<!-- END: Header Section -->
+<!-- BEGIN: Main Content Area -->
+<main class="flex-1 overflow-y-auto pb-24">
+<!-- Dish Components List -->
+<!-- Step Instruction Card -->
+<section class="px-6 py-6 flex flex-col justify-center items-center text-center h-full">
+<!-- Step Progress & Audio -->
+<div class="flex justify-between items-center mb-6">
+<div class="flex gap-1.5">
+<div class="w-6 h-2 rounded-full bg-clove-light-green"></div>
+<div class="w-2 h-2 rounded-full bg-gray-200"></div>
+<div class="w-2 h-2 rounded-full bg-gray-200"></div>
+<div class="w-2 h-2 rounded-full bg-gray-200"></div>
+<div class="w-2 h-2 rounded-full bg-gray-200"></div>
+<div class="w-2 h-2 rounded-full bg-gray-200"></div>
+<div class="w-2 h-2 rounded-full bg-gray-200"></div>
+<div class="w-2 h-2 rounded-full bg-gray-200"></div>
+</div>
+<button class="text-gray-500 hover:text-gray-800">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.114 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424M6.75 8.25l4.72-4.72a.75.75 0 011.28.53v15.88a.75.75 0 01-1.28.53l-4.72-4.72H4.51c-.88 0-1.704-.507-1.938-1.354A9.01 9.01 0 012.25 12c0-.83.112-1.633.322-2.396C2.806 8.756 3.63 8.25 4.51 8.25H6.75z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Instruction Text -->
+<p class="text-2xl font-bold text-on-surface leading-tight mb-8">
+          In a wide bowl, stir together the fish sauce, oyster sauce, marmalade, sugar, sesame oil, lemongrass, garlic, shallot, ginger, sliced scallions, and the pho seasoning until the marmalade and sugar dissolve into a glossy paste. This is your full salt and sweetness for the chops, so taste-balance it now rather than re-seasoning later.
+        </p><button class="w-full py-4 px-6 border-2 border-primary-container rounded-full flex items-center justify-center gap-3 text-primary-container font-bold mb-4"><span class="material-symbols-outlined">timer</span> Start 60 min timer</button>
+<!-- Utility Icons -->
+<div class="flex justify-center gap-6 mt-auto pb-4">
+<button class="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.82 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.496 1.509 1.333 1.509 2.316V18" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+<button class="w-10 h-10 rounded-xl border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+</section>
+</main>
+<!-- END: Main Content Area -->
+<!-- BEGIN: Bottom Navigation / Action -->
+<footer class="absolute bottom-0 inset-x-0 bg-white p-6 pb-8 border-t border-gray-50"><div class="flex items-center gap-4"><button class="flex-1 py-4 text-gray-500 font-bold">Back</button><button class="flex-1 bg-primary-container text-white font-bold py-4 rounded-xl flex items-center justify-center">Next <span class="material-symbols-outlined ml-1">chevron_right</span></button></div></footer>
+<!-- END: Bottom Navigation / Action -->
+</div>
+</body></html>
